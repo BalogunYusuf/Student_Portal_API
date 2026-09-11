@@ -5,9 +5,9 @@ const userModel = require ("../Models/userModel");
 
 const createStudent = async (req, res) => {
     try {
-        const {name, Reg_no, email} = req.body
+        const {name, reg_no, email} = req.body
         const newStudent = await userModel.create({
-            name, Reg_no, email
+            name, reg_no, email
         })
 
         res.status(201).json({
