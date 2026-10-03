@@ -1,10 +1,13 @@
+//import "dotenv/config"
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const userRoute = require("./Routes/userRoute");
 const courseRoute = require("./Routes/courseRoute")
 
-const compass_string = "mongodb://localhost:27017/student_portal_db"
-const atlas_string = "mongodb+srv://brandingpro21_db_user:brandingpro21_db_user@cluster0.6jktfqz.mongodb.net/student_portal_db?appName=Cluster0"
+const compass_string = process.env.COMPASS_STRING
+const atlas_string = process.env.ATLAS_STRING
 
 
 mongoose.connect(atlas_string)
